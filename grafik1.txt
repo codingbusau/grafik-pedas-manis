@@ -1,0 +1,85 @@
+/*
+SQLyog Ultimate v11.11 (64 bit)
+MySQL - 5.5.5-10.4.10-MariaDB : Database - grafik1
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`grafik1` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+
+USE `grafik1`;
+
+/*Table structure for table `distribusi` */
+
+DROP TABLE IF EXISTS `distribusi`;
+
+CREATE TABLE `distribusi` (
+  `idD` int(2) NOT NULL AUTO_INCREMENT,
+  `nilai` varchar(25) NOT NULL,
+  `frekuensi` int(3) NOT NULL,
+  `frekuensip` int(3) NOT NULL,
+  PRIMARY KEY (`idD`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `distribusi` */
+
+insert  into `distribusi`(`idD`,`nilai`,`frekuensi`,`frekuensip`) values (1,'16 s/d 17',3,1),(2,'18 s/d 19',18,13),(3,'20 s/d 21',7,21),(4,'22 s/d 23',6,7),(5,'24 s/d 25',1,1);
+
+/*Table structure for table `manis` */
+
+DROP TABLE IF EXISTS `manis`;
+
+CREATE TABLE `manis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nilaiM` varchar(50) DEFAULT NULL,
+  `frekuensiM` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `manis` */
+
+insert  into `manis`(`id`,`nilaiM`,`frekuensiM`) values (1,'16 s/d 17',3),(2,'18 s/d 19',18),(3,'20 s/d 21',7),(4,'22 s/d 23',6);
+
+/*Table structure for table `pedas` */
+
+DROP TABLE IF EXISTS `pedas`;
+
+CREATE TABLE `pedas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nilaiP` varchar(50) DEFAULT NULL,
+  `frekuensiP` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `pedas` */
+
+insert  into `pedas`(`id`,`nilaiP`,`frekuensiP`) values (1,'18 s/d 19',13),(2,'20 s/d 21',21),(3,'22 s/d 23',7),(4,'24 s/d 25',1);
+
+/*Table structure for table `tiperasa` */
+
+DROP TABLE IF EXISTS `tiperasa`;
+
+CREATE TABLE `tiperasa` (
+  `type` varchar(50) DEFAULT NULL,
+  `16 s/d 17` int(11) DEFAULT NULL,
+  `18 s/d 19` int(11) DEFAULT NULL,
+  `20 s/d 21` int(11) DEFAULT NULL,
+  `22 s/d 23` int(11) DEFAULT NULL,
+  `24 s/d 25` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tiperasa` */
+
+insert  into `tiperasa`(`type`,`16 s/d 17`,`18 s/d 19`,`20 s/d 21`,`22 s/d 23`,`24 s/d 25`) values ('pedas',0,13,21,7,1),('manis',3,18,7,6,0);
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
